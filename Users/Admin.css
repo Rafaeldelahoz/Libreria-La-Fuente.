@@ -1,0 +1,86 @@
+:root{
+    --primary:#FFA054;
+    --light:#FEFEFF;
+    --grey:#441700;
+    
+}
+
+body{
+    display: flex;
+    font-family: 'Mulish',sans-serif;
+    font-weight: 300;
+    color: var(--light);
+}
+
+.d-flex{
+    display:flex;
+}
+
+.nav-link{
+    text-align: center;
+    
+}
+
+a,a:hover{
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s;
+}
+
+.bg-primary{
+    background-color: var(--grey) !important;
+}
+
+#sidebar{
+    min-height: 100vh;
+}
+
+#sidebar .logo{
+    padding: 0;
+}
+
+#sidebar .menu{
+    width: 12rem;
+}
+
+.avatar{
+    max-width: 60px;
+}
+
+.content{
+    width: 100%;
+    margin-left: 15%;
+}
+
+label{
+    color:black;
+}
+
+.labe{
+    margin-top: 7px;
+}
+
+.cente{
+    margin-left: 40%;
+}
+
+.formu{
+    margin-top: 20px;
+    margin-left: 25%;
+}
+
+.enviar{
+    margin-top: 20px;
+    width: 100%;
+}
+
+.edit,.ed{
+    margin-top: 20px;
+}
+
+.inv{
+    width: 100%;
+
+}
+
+
