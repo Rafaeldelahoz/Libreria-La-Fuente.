@@ -1,3 +1,13 @@
+<?php
+session_start();
+if(!isset($_SESSION['usuario'])){
+  echo '<script>alert("acceso denegado,por favor inicie sesión")
+    window.location="../index";
+    </script>;'; session_destroy(); die();
+}
+
+?>
+
 <!doctype html>
 <html lang="es">
   <head>
@@ -10,58 +20,63 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"> 
-    <link rel="stylesheet" href="Admin.css">
+    <link rel="stylesheet" href="./admin.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <title>Dashboard</title>
   </head>
   <body>
-    <div class="d-flex position-fixed">
-      <div id="sidebar" class="bg-primary">
+
+    <div class="container d-flex position-fixed" style="padding-left: 0px;">
+      <nav>
+        <div id="sidebar" class="bg-primary">
           <div class="logo">
             <a class="nav-link fw-bold d-flex flex-column align-content-center flex-wrap p-2 border-bottom " href="#">
-              <img src="/Images/User1.jpg" alt="user photo" class="ing-fluid rounded-circle avatar m-2 border border-2 display display-flex">
+              <img src="../images/User1.jpg" alt="user photo" class="ing-fluid rounded-circle avatar m-2 border border-2 display display-flex">
               Admin
             </a>
           </div>
           <div class="menu">
-            <a href="/Users/1Admin_per.html" class="d-block text-light p-3"><i class="icon ion-md-person m-2 lead"></i>Perfil</a>
-            <a href="/Users/2Admin_not.html" class="d-block text-light p-3"><i class="icon ion-md-notifications m-2 lead"></i>Notificaciones</a>
+            <ul style="list-style: none; padding:0;">
+              <li><a href="./1.perfil.php" class="d-block text-light p-3"><i class="icon ion-md-person m-2 lead"></i>Perfil</a></li>
+              <li><a href="./2.bandeja.php" class="d-block text-light p-3"><i class="icon ion-md-notifications m-2 lead"></i>Notificaciones</a></li>
             
-            <li class="active">
-              <a href="#EmpSubmenu" class="d-block text-light p-3 dropdown-toggle" data-bs-toggle="collapse" aria-expanded="false" role="button" aria-controls="collapseExample">
-                <i class="icon ion-md-briefcase m-2 lead"></i>Jornadas
-              </a>
-              <ul class="collapse list-unstyled" id="EmpSubmenu">
-                <li><a href="/Users/3Admin_jor.html" class="d-block text-light p-1 m-1">Panel propio</a></li>
-                <li><a href="/Users/4Admin_em.html" class="d-block text-light p-1 m-1">panel empleados</a></li>
-              </ul>
-            </li>
-            
-            <li class="active">
-                <a href="#datosSubmenu" class="d-block text-light p-3 dropdown-toggle" data-bs-toggle="collapse" aria-expanded="false" role="button" aria-controls="collapseExample">
-                  <i class="icon ion-md-stats m-2 lead"></i>Datos
+              <li class="active">
+                <a href="#EmpSubmenu" class="d-block text-light p-3 dropdown-toggle" data-bs-toggle="collapse" aria-expanded="false" role="button" aria-controls="collapseExample">
+                  <i class="icon ion-md-briefcase m-2 lead"></i>Jornadas
                 </a>
-              <ul class="collapse list-unstyled" id="datosSubmenu">
-                <li><a href="/Users/5Admin_price.html" class="d-block text-light p-1 m-1">panel precios</a></li>
-                <li><a href="#" class="d-block text-light p-1 m-1">Inventario</a></li>
-              </ul>
-            </li>
-            <a href="#" class="badge rounded-pill bg-secondary d-block text-light text-center p-3 ">Cerrar sesión<i class="icon ion-md-exit m-2 lead"></i></a>
+                <ul class="collapse list-unstyled" id="EmpSubmenu">
+                  <li><a href="./3.jornada.php" class="d-block text-light p-1 m-1">Panel propio</a></li>
+                  <li><a href="./4.Admin_em.php" class="d-block text-light p-1 m-1">panel empleados</a></li>
+                </ul>
+              </li>
+            
+              <li class="active">
+                  <a href="#datosSubmenu" class="d-block text-light p-3 dropdown-toggle" data-bs-toggle="collapse" aria-expanded="false" role="button" aria-controls="collapseExample">
+                    <i class="icon ion-md-stats m-2 lead"></i>Datos
+                  </a>
+                <ul class="collapse list-unstyled" id="datosSubmenu">
+                  <li><a href="./5.Admin_price.php" class="d-block text-light p-1 m-1">panel precios</a></li>
+                  <li><a href="./6.inventario.php" class="d-block text-light p-1 m-1">Inventario</a></li>
+                </ul>
+              </li>
+              <li><a href="../php/cerrar_login.php" class="cerrar badge d-block text-light text-center p-3 " style="position: absolute; bottom: 0; margin-bottom: 5px; margin-left: 22px;">Cerrar sesión<i class="icon ion-md-exit m-2 lead"></i></a></li>
+            </ul>
           </div>
-      </div>
+        </div>
+      </nav>
     </div>
     <div class="content">
       <section>
         <div class="container">
           <div class="forma">
-            <form action="" class=""></form>
+            <form action="" class="">
               <fieldset>
                 <div class="cente">
                   <legend class="text-black"><h2 class="ed">Editar Perfil</h2></legend>
                     <div class="edit d-flex"> 
-                      <img src="/Images/User1.jpg" alt="user photo" class="ing-fluid rounded-circle avatar m-2 border border-2">
+                      <img src="../images/User1.jpg" alt="user photo" class="ing-fluid rounded-circle avatar m-2 border border-2">
                         <div class="align-content-center m-2">
                           <h6 class="text-black">Helena Hills</h6>
                             <a href="#" class="link-secondary">Cambiar foto</a>
@@ -89,10 +104,13 @@
                     <input type="text" name="email" placeholder="MariaHilss@correo.com" required class="place-form2">
                     <label for="date" class="labe">Fecha de nacimiento</label>
                     <input type="date" name="date" required class="place-form2" id="sms"></input>
+                    <label for="direccion" class="labe">Dirección</label>
+                    <input type="text" name="direccion" placeholder="Avenida siempreviva 123" required class="place-form2">
                   </div>
                     <button type="submit" class="enviar p-2 bg-primary text-light rounded-pill border-0">Guardar cambios</button>
                 </div>
               </fieldset>
+            </form>
           </div>
         </div>
       </section>

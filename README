@@ -7,3 +7,27 @@ Estado del Proyecto:
 -Rol Admin: Terminada las paginas correspondientes (Falta mejorar su presentación y resposivo hasta cierto punto).
 -Rol Caja: Pendiente.
 -Rol Almacen: Pendiente.
+
+
+
+
+Glosario:
+
+---- variables----
+
+$_POST es una variable superglobal o automática global que se utiliza para recopilar las variables que se pasan por el verbo post. Esto significa que está disponible en cualquier parte del script, sin necesidad de hacer una variable global para acceder a ella dentro de funciones o métodos. 
+$_POST se utiliza para recopilar el valor del campo de entrada en un archivo PHP especificado en el atributo action de la etiqueta <form>. Esto sucede cuando un usuario hace clic en el botón de envío del formulario. 
+El método POST se utiliza para enviar datos sensibles o para realizar cambios en el servidor, como enviar un formulario de registro. Los datos se envían de manera más discreta y no son visibles en la URL. 
+
+
+num_rows es un método que devuelve el número de filas en un conjunto de resultados activo. 
+En PHP, las funciones mysqli_stmt::$num_rows y mysqli_result::$num_rows también devuelven el número de filas de un conjunto de resultados. 
+Si el número de filas es mayor al máximo valor de PHP_INT_MAX, el número será retornado como un string. 
+En MySQL, se recomienda abandonar el uso de la función mysql_num_rows() porque es pesada para el servidor. Esto se debe a que es un bucle que recorre cada fila para contarlas. 
+Para averiguar la cantidad de registros de una tabla, se puede usar la función count(). Esta función cuenta la cantidad de registros de una tabla, incluyendo los que tienen valor nulo. 
+
+
+Fetch_assoc es una función de PHP que devuelve una fila de resultados como una matriz asociativa. Los nombres de campo devueltos por esta función distinguen entre mayúsculas y minúsculas. 
+Fetch_assoc es equivalente a llamar a mysql_fetch_array() con MYSQL_ASSOC para el segundo parámetro opcional. 
+La diferencia entre fetch_assoc y fetch_object es que fetch_assoc crea un array asociativo, mientras que fetch_object crea un objeto con los resultados. 
+La elección entre usar una u otra función depende de si se necesita trabajar con un objeto o con un array. También puede depender del rendimiento, especialmente en contextos con muchos datos o con mucha concurrencia. 

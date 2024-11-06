@@ -36,21 +36,21 @@
       <div id="sidebar" class="bg-primary">
           <div class="logo">
             <a class="nav-link fw-bold d-flex flex-column align-content-center flex-wrap p-2 border-bottom " href="#">
-              <img src="/Images/User1.jpg" alt="user photo" class="ing-fluid rounded-circle avatar m-2 border border-2 display display-flex">
+              <img src="../images/User1.jpg" alt="user photo" class="ing-fluid rounded-circle avatar m-2 border border-2 display display-flex">
               Admin
             </a>
           </div>
           <div class="menu">
-            <a href="/Users/1Admin_per.html" class="d-block text-light p-3"><i class="icon ion-md-person m-2 lead"></i>Perfil</a>
-            <a href="/Users/2Admin_not.html" class="d-block text-light p-3"><i class="icon ion-md-notifications m-2 lead"></i>Notificaciones</a>
+            <a href="./1.perfil.php" class="d-block text-light p-3"><i class="icon ion-md-person m-2 lead"></i>Perfil</a>
+            <a href="./2.bandeja.php" class="d-block text-light p-3"><i class="icon ion-md-notifications m-2 lead"></i>Notificaciones</a>
             
             <li class="active">
               <a href="#EmpSubmenu" class="d-block text-light p-3 dropdown-toggle" data-bs-toggle="collapse" aria-expanded="false" role="button" aria-controls="collapseExample">
                 <i class="icon ion-md-briefcase m-2 lead"></i>Jornadas
               </a>
               <ul class="collapse list-unstyled" id="EmpSubmenu">
-                <li><a href="/Users/3Admin_jor.html" class="d-block text-light p-1 m-1">Panel propio</a></li>
-                <li><a href="/Users/4Admin_em.html" class="d-block text-light p-1 m-1">panel empleados</a></li>
+                <li><a href="./3.jornada.php" class="d-block text-light p-1 m-1">Panel propio</a></li>
+                <li><a href="./4.Admin_em.php" class="d-block text-light p-1 m-1">panel empleados</a></li>
               </ul>
             </li>
             
@@ -59,11 +59,11 @@
                   <i class="icon ion-md-stats m-2 lead"></i>Datos
                 </a>
               <ul class="collapse list-unstyled" id="datosSubmenu">
-                <li><a href="/Users/5Admin_price.html" class="d-block text-light p-1 m-1">panel precios</a></li>
-                <li><a href="#" class="d-block text-light p-1 m-1">Inventario</a></li>
+                <li><a href="./5.Admin_price.php" class="d-block text-light p-1 m-1">panel precios</a></li>
+                <li><a href="./6.inventario.php" class="d-block text-light p-1 m-1">Inventario</a></li>
               </ul>
             </li>
-            <a href="#" class="badge rounded-pill bg-secondary d-block text-light text-center p-3 ">Cerrar sesión<i class="icon ion-md-exit m-2 lead"></i></a>
+            <a href="../php/cerrar_login.php" class="badge d-block text-light text-center p-3 " style="position: absolute; bottom: 0; margin-bottom: 5px; margin-left: 22px;">Cerrar sesión<i class="icon ion-md-exit m-2 lead"></i></a>
           </div>
       </div>
     </div>
@@ -122,45 +122,47 @@
         </div>
         <div class="container text-black">
           <h2 class="m-5">Registro Matutino</h2>
-          <table id="myTable" class="display m-2">
-            <thead>
-                <tr>
-                  <th><i class="icon ion-md-calendar"></i> Fecha</th>
-                  <th><i class="icon ion-md-alarm"></i> Horas laboradas</th>
-                  <th><i class="icon ion-md-list"></i> N°. Descansos</th>
-                  <th><i class="icon ion-md-list"></i> Hr. Inicio</th>
-                  <th><i class="icon ion-md-list"></i> Hr. Fin</th>
-                  <th><i class="icon ion-md-link"></i> Novedades</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+          <div class="container border border-black">
+            <table id="myTable" class="display m-2">
+              <thead>
+                  <tr>
+                    <th><i class="icon ion-md-calendar"></i> Fecha</th>
+                    <th><i class="icon ion-md-alarm"></i> Horas laboradas</th>
+                    <th><i class="icon ion-md-list"></i> N°. Descansos</th>
+                    <th><i class="icon ion-md-list"></i> Hr. Inicio</th>
+                    <th><i class="icon ion-md-list"></i> Hr. Fin</th>
+                    <th><i class="icon ion-md-link"></i> Novedades</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>DD/MM/AAAA</td>
+                      <td>HH:MM:SS</td>
+                      <td>Sin registrar</td>
+                      <td>HH:MIN</td>
+                      <td>HH:MIN</td>
+                      <td><a href="#"><i class="icon ion-md-checkmark"></i></a></td>
+                  </tr>
+                  <tr>
                     <td>DD/MM/AAAA</td>
                     <td>HH:MM:SS</td>
-                    <td>Sin registrar</td>
+                    <td>1</td>
                     <td>HH:MIN</td>
                     <td>HH:MIN</td>
                     <td><a href="#"><i class="icon ion-md-checkmark"></i></a></td>
-                </tr>
-                <tr>
-                  <td>DD/MM/AAAA</td>
-                  <td>HH:MM:SS</td>
-                  <td>1</td>
-                  <td>HH:MIN</td>
-                  <td>HH:MIN</td>
-                  <td><a href="#"><i class="icon ion-md-checkmark"></i></a></td>
-               </tr>
-                <tr>
-                  <td>DD/MM/AAAA</td>
-                  <td>HH:MM:SS</td>
-                  <td>1</td>
-                  <td>HH:MIN</td>
-                  <td>HH:MIN</td>
-                  <td><i class="icon ion-md-alert"></i></td>
-                </tr>                          
-            </tbody>
-            
-        </table>
+                 </tr>
+                  <tr>
+                    <td>DD/MM/AAAA</td>
+                    <td>HH:MM:SS</td>
+                    <td>1</td>
+                    <td>HH:MIN</td>
+                    <td>HH:MIN</td>
+                    <td><i class="icon ion-md-alert"></i></td>
+                  </tr>                          
+              </tbody>
+              
+            </table>
+          </div>
         </div>
       </section>
     </div>

@@ -12,6 +12,20 @@ body{
     color: var(--light);
 }
 
+nav{
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style: none; /* Elimina los puntos de la lista */
+          /* Opcional: quita el padding de la lista */
+            /* Opcional: quita el margen de la lista */
+}
+/*
+.active:hover{
+    background-color:#2F1000;
+}*/
+
 .d-flex{
     display:flex;
 }
@@ -25,6 +39,14 @@ a,a:hover{
     text-decoration: none;
     color: inherit;
     transition: all 0.3s;
+}
+
+#buscarLupa{
+    border: 0;
+}
+
+a:hover{
+    background-color:#2F1000;
 }
 
 .bg-primary{
