@@ -1,0 +1,30 @@
+{
+  "name": "libreria-la-fuente",
+  "version": "1.0.0",
+  "description": "Proyecto de libreria, manejo de inventario y de inicio de sesion",
+  "main": "backend/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon backend/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rafaeldelahoz/Libreria-La-Fuente..git"
+  },
+  "author": "Rafael De La Hoz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rafaeldelahoz/Libreria-La-Fuente./issues"
+  },
+  "homepage": "https://github.com/Rafaeldelahoz/Libreria-La-Fuente.#readme",
+  "dependencies": {
+    "crypto-js": "^4.2.0",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.2",
+    "morgan": "^1.10.0"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

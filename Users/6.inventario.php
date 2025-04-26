@@ -101,7 +101,7 @@
                 </div>
                   <button type="submit" class="envia p-2 bg-primary text-light rounded-pill border-0 mt-4 mb-2">Guardar cambios</button>
                   <button type="submit" class="envia p-2 bg-primary text-light rounded-pill border-0 mt-4 mb-2">Modificar cambios</button>
-                  <a href="" class="text-black m-3"><i class="icon ion-md-add"></i> añadir similar</a>
+                  <a href="" class="text-black m-3 rounded pill"><i class="icon ion-md-add"></i> añadir similar</a>
               </div>
             </fieldset>
       </div>

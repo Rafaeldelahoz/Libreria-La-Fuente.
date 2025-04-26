@@ -79,33 +79,42 @@
       <section>
         <div class="container">
           <h2 class="m-5 text-black">Registro empleados</h2>
-          <form method="POST" action="" class="">
+          <form method="POST" action="../php/mtto.php" class="">
             <fieldset>
               <div class="d-block border border-black container p-3">
                   <section class="d-flex " style="">
                     <div class="row">
-                      <div class="on col-lg-5"><!-- columna -->
+                      <div class="on col-lg-5" style="margin-left:30px;"><!-- columna -->
                         <Label for="name" class="labe">Nombre</Label>
                         <input type="text" name="nombre" id="nombre" placeholder="Maria" required class="place-form">
                         <label for="e-mail" class="labe">Correo electrónico</label>
-                        <input type="text" name="email" id="email" placeholder="MariaHilss@correo.com" required class="place-form">
+                        <input type="text" name="email" id="email" placeholder="MariaHilss@correo.com" required class="place-form"><br>
                         <label for="country" class="labe">País</label>
                         <input type="text" name="pais" id="pais" placeholder="Colombia" required class="place-form">
                         <label for="user" class="labe">Usuario</label>
                         <input type="text" name="usuario" id="usuario" placeholder="#" required class="place-form">
+                        <label type="text" for="form" class="labe" style="padding-bottom:1px;">Cargo o rol</label><br>
+                        <select  name="rol" id="rol" required class="place-form" style="width: 218px; height:30px;">
+                          <option value="">Seleccione...</option>
+                          <option value="Admin" >Admin</option>
+                          <option value="Almacen">Almacen</option>
+                          <option value="Caja">Caja</option>
+                        </select>
                       </div>                   
                       <div class="tw col-lg-5"><!-- columna -->
                         <label for="last name" class="labe">Apellido</label>
                         <input type="text" name="apellido" id="apellido" placeholder="Hills" required class="place-form">
                         <label for="date" class="labe">Fecha de nacimiento</label>
-                        <input type="date" name="fecha" id="fenac" required class="place-form" id="sms" style="width: 215px;"></input>
+                        <input type="date" name="fenac" id="fenac" required class="place-form" id="sms" style="width: 215px;"></input>
                         <label for="region" class="labe">Departamento</label>
                         <input type="text" name="departamento" id="departamento" placeholder="Atlántico" required class="place-form">
                         <label for="password" class="labe">Contraseña</label>
                         <input type="password" name="contrasena" id="contrasena" placeholder="#" required class="place-form">
+                        <label for="text" class="labe">Salario</label>
+                        <input type="text" name="salario" id="salario" placeholder="#" required class="place-form">
                       </div>
                     </div>
-                    <div class="row " style="margin-left:-80px;">
+                    <div class="row " style="margin-left:-40px;">
                         <div class="col-lg-5"><!-- columna -->
                           <label for="" class="labe">Cedula</label>
                           <div style="display:flex"><input type="number" id="cedula" name="cedula" placeholder="123456789" required class="place-form"><button type="button" id="buscarLupa" style="border:0; background:none;"><i class="icon ion-md-search lead"></i></button></div>
@@ -122,7 +131,7 @@
                           <label for="" class="labe">Contacto</label>
                           <input type="contact" name="telefono" id="telefono" placeholder="3005006060" required class="place-form">
                           <label for="direccion" class="labe">n° residencia</label>
-                          <input type="text" name="numerorec" id="numerorec" placeholder="Avenida siempreviva 123" required class="place-form">
+                          <input type="text" name="residencia" id="residencia" placeholder="Avenida siempreviva 123" required class="place-form">
                           <label for="direccion" class="labe">Barrio</label>
                           <input type="text" name="barrio" id="barrio" placeholder="Avenida siempreviva 123" required class="place-form">
                           <label for="direccion" class="labe">Código postal</label>
@@ -132,10 +141,12 @@
                     </div>  
                   </section>              
                   <section style="margin-left: 30px; margin-top:30px;">
-                    <button type="submit" class="envia p-2 bg-primary text-light rounded-pill border-0">Crear usuario</button>
-                    <button type="submit" class="envia p-2 bg-primary text-light rounded-pill border-0">Modificar usuario</button>
-                    <button type="submit" class="envia p-2 bg-primary text-light rounded-pill border-0">Eliminar usuario</button>
+                    <button type="submit" class="envia p-2 bg-primary text-light rounded-pill border-0" name="crear_usuario">Crear usuario</button>
+                    <button type="submit" class="envia p-2 bg-primary text-light rounded-pill border-0" name="modificar_usuario">Modificar usuario</button>
+                    <button type="submit" class="envia p-2 bg-primary text-light rounded-pill border-0" name="eliminar_usuario">Eliminar usuario</button>
+                    <a href="" class="text-black m-3 rounded pill" name="limpiar"><i class="icon ion-md-trash"></i> limpiar</a>
                   </section>
+                  
               </div>
             </fieldset>
           </form>
@@ -156,30 +167,35 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>(Nombre)</td>
-                            <td>Caja</td>
-                            <td>Sin registrar</td>
-                            <td>HH:MIN</td>
-                            <td>MM</td>
-                            <td><a href="#"><i class="icon ion-md-checkmark"></i></a></td>
-                        </tr>
-                        <tr>
-                          <td>(Nombre)</td>
-                          <td>Almacen</td>
-                          <td>Sin registrar</td>
-                          <td>HH:MIN</td>
-                          <td>MM</td>
-                          <td><a href="#"><i class="icon ion-md-checkmark"></i></a></td>
-                       </tr>
-                        <tr>
-                          <td>(Nombre)</td>
-                          <td>Almacen</td>
-                          <td>1</td>
-                          <td>HH:MIN</td>
-                          <td>MM</td>
-                          <td><i class="icon ion-md-alert"></i></td>
-                        </tr>                          
+                        <!-- Aquí se cargarán los datos con PHP -->
+                <?php /*
+                // Conexión a la base de datos
+                require "../php/conexion.php";
+                if ($conexion->connect_error) {
+                    die("Error de conexión: " . $conexion->connect_error);
+                }
+
+                // Consulta SQL
+                $sql1 = "SELECT * , CONCAT(e.nombre, ' ', e.apellido) AS nombre_completo FROM persona LEFT JOIN jornada  ON id_jornada = id_jornada;";
+                
+                $result = $conexion->query($sql1);
+
+                // Iterar los registros
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>
+                                <td>{$row['nombre_completo']}</td>                             
+                                
+                                
+                              </tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='6' class='text-center'>No hay registros disponibles</td></tr>";
+                }
+
+                $conexion->close();*/
+                ?>
+                        
                     </tbody>
                     
                   </table>
@@ -267,7 +283,20 @@
                                 $('#telefono').val(data.telefono);
                                 $('#email').val(data.email);
                                 $('#fenac').val(data.fnac);
-                                $('#gsanguineo').val(data.gsanguineo);              
+                                $('#gsanguineo').val(data.gsanguineo);                                    
+                                $('#contrasena').val(data.contrasena);  
+                                $('#usuario').val(data.usuario);  
+                                $('#pais').val(data.pais);
+                                $('#departamento').val(data.departamento);
+                                $('#ciudad').val(data.ciudad); 
+                                $('#barrio').val(data.barrio); 
+                                $('#via').val(data.via);
+                                $('#residencia').val(data.residencia); 
+                                $('#cpostal').val(data.postal);
+                                $('#direccion').val(data.direccion);
+                                $('#rol').val(data.rol); 
+                                $('#salario').val(data.salario);
+                                
                             } else {
                                 alert("Usuario no encontrado.");
                             }
